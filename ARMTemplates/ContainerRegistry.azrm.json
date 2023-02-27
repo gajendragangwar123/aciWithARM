@@ -41,19 +41,19 @@
     ],
     "outputs": {
         "registry_name": {
-            "value": "[variables('registryName')]",
+            "defaultValue": "gajendraregistry",
             "type": "string"
         },
         "registry_server": {
-            "value": "[reference(resourceId('Microsoft.ContainerRegistry/registries',variables('registryName')),variables('regApiVersion')).loginServer]",
+            "defaultValue": "gajendraserver",
             "type": "string"
         },
         "registry_username": {
-            "value": "[listCredentials(resourceId('Microsoft.ContainerRegistry/registries',variables('registryName')),variables('regApiVersion')).username]",
+            "defaultValue": "gajendrauser",
             "type": "string"
         },
         "registry_password": {
-            "value": "[listCredentials(resourceId('Microsoft.ContainerRegistry/registries',variables('registryName')),variables('regApiVersion')).passwords[0].value]",
+            "defaultValue": "gajendrapassword",
             "type": "string"
         }
     }
