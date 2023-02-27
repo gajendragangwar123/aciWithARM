@@ -81,7 +81,7 @@
             }
           ],
           "type": "Public",
-          "dnsNameLabel": "mynodeapp"
+          "dnsNameLabel": "gajendranodeapp"
         },
         "osType": "Linux"
       }
