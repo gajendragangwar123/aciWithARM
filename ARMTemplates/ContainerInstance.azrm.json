@@ -11,17 +11,20 @@
       "type": "string"
     },
     "registryServerName": {
+      "defaultValue": "gajndraserver",
       "type": "string"
     },
     "registryUserName": {
+      "defaultValue": "gajendrauser",
       "type": "string"
     },
     "registryPassword": {
+      "defaultValue": "gajendrapassword",
       "type": "string"
     },
     "image": {
       "type": "string",
-      "defaultValue":""
+      "defaultValue":"gajendraimage"
     },
     "env_ENVIRONMENT_NAME": {
       "type": "string"
