@@ -27,6 +27,7 @@
       "defaultValue":"gajendraimage"
     },
     "env_ENVIRONMENT_NAME": {
+      "defaultValue": "dev",
       "type": "string"
     }
   },
