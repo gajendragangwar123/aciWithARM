@@ -1,4 +1,5 @@
-{
+
+ {
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
@@ -11,30 +12,26 @@
       "type": "string"
     },
     "registryServerName": {
-      "defaultValue": "gajndraserver",
       "type": "string"
     },
     "registryUserName": {
-      "defaultValue": "gajendrauser",
       "type": "string"
     },
     "registryPassword": {
-      "defaultValue": "gajendrapassword",
       "type": "string"
     },
     "image": {
       "type": "string",
-      "defaultValue":"gajendraimage"
+      "defaultValue":"gajendraregistry.azurecr.io/gajendraimage:latest"
     },
     "env_ENVIRONMENT_NAME": {
-      "defaultValue": "dev",
-      "type": "string"
+      "type": "string",
+      "defaultValue":"Dev"
     }
   },
   "variables": {
-    "containerInstanceName": "[concat('mycontainerinstance',variables('deploymentId'))]",
+    "containerInstanceName": "gajendrainstance",
     "location": "[resourceGroup().location]",
-    "deploymentId": "[uniqueString(resourceGroup().id)]",
     "instanceApiVersion": "2018-10-01"
   },
   "resources": [
@@ -84,7 +81,7 @@
             }
           ],
           "type": "Public",
-          "dnsNameLabel": "mynodeapp19796"
+          "dnsNameLabel": "mynodeapp"
         },
         "osType": "Linux"
       }
