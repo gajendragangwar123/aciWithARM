@@ -1,60 +1,21 @@
-{
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
-    "variables": {
-        "registryName": "[concat('mycontainerregistry',variables('deploymentId'))]",
-        "location": "[resourceGroup().location]",
-        "deploymentId": "[uniqueString(resourceGroup().id)]",
-        "regApiVersion": "2019-12-01-preview"
-    },
+    "parameters": {},
+    "functions": [],
+    "variables": {},
     "resources": [
         {
+            "name": "gajendraregistry",
             "type": "Microsoft.ContainerRegistry/registries",
-            "apiVersion": "[variables('regApiVersion')]",
-            "name": "[variables('registryName')]",
-            "location": "[variables('location')]",
+            "apiVersion": "2019-05-01",
+            "location": "[resourceGroup().location]",
             "sku": {
-                "name": "Standard",
-                "tier": "Standard"
+                "name": "Standard"
             },
             "properties": {
-                "adminUserEnabled": true,
-                "policies": {
-                    "quarantinePolicy": {
-                        "status": "disabled"
-                    },
-                    "trustPolicy": {
-                        "type": "Notary",
-                        "status": "disabled"
-                    },
-                    "retentionPolicy": {
-                        "days": 7,
-                        "status": "disabled"
-                    }
-                },
-                "encryption": {
-                    "status": "disabled"
-                },
-                "dataEndpointEnabled": false
+                "adminUserEnabled": true
             }
         }
     ],
-    "outputs": {
-        "registry_name": {
-            "defaultValue": "gajendraregistry",
-            "type": "string"
-        },
-        "registry_server": {
-            "defaultValue": "gajendraserver",
-            "type": "string"
-        },
-        "registry_username": {
-            "defaultValue": "gajendrauser",
-            "type": "string"
-        },
-        "registry_password": {
-            "defaultValue": "gajendrapassword",
-            "type": "string"
-        }
-    }
+    "outputs": {}
 }
