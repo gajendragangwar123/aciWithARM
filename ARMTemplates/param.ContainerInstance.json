@@ -9,20 +9,16 @@
             "value": "4"
         },
         "registryServerName": {
-            "defaultValue": "gajndraserver",
-            "type": "string"
+            "value": "string"
         },
         "registryUserName": {
-            "defaultValue": "gajndrauser",
-            "type": "string"
+            "value": "string"
         },
         "registryPassword": {
-            "defaultValue": "gajndrapassword",
-            "type": "string"
+            "value": "string"
         },
         "image": {
-            "defaultValue": "gajndraimage",
-            "type": "string"
+            "value": "string"
         }
     }
 }
